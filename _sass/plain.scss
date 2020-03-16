@@ -1,6 +1,7 @@
 @import "ext/fonts";
 @import "ext/normalize";
 @import "syntax";
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 
 $linkColor: #0a59b0;
 $mobileW: 768px;
@@ -15,7 +16,7 @@ $leftWidth: 220px;
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Spoqa Han Sans', 'Sans-serif';
   font-size: 16px;
   line-height: 1.2em;
   margin: 0;
@@ -139,7 +140,7 @@ main {
 
     a {
       display: block;
-      font-family: 'Merriweather';
+      font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
       text-align: center;
       padding: 1rem 0;
       text-decoration: none;
@@ -217,7 +218,7 @@ main {
   padding-left: 30px;
 }
 .post {
-  font-family: "Merriweather", sans-serif;
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
   font-weight: 300;
   color: #222;
   line-height: 1.9em;
