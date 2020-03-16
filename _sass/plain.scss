@@ -350,19 +350,25 @@ ul.menu li {
     padding-bottom: 0px !important;
   }
 
+  .about img {
+    width: 120px !important;
+  }
+
   ul.menu {
     width: 100%;
+    text-align: center;
   }
 
 
   ul.menu li {
     display: inline-block;
     width: 30% !important;
-    margin: 6px;
-    font-size: 18px;
-    height: 50px;
+    margin: 3px;
+    font-size: 15px;
+    padding-left: 0px !important;
+    height: 40px;
     text-align: center;
-    line-height: 50px;
+    line-height: 40px;
     background-color: #eee;
     border: 1px solid rgb(226, 226, 226);
     border-radius: 8px;
@@ -376,6 +382,20 @@ ul.menu li {
     display: none;
   }
 
+  .mainPosts {
+    padding-left: 0px !important;
+    border-bottom: 1px solid #eee !important;
+  }
+
+ .cate-li {
+   padding-left: 5px !important;
+   padding-right: 5px !important;
+   border-radius: 6px !important;
+   -webkit-border-radius: 6px !important;
+   -moz-border-radius: 6px !important;
+   -ms-border-radius: 6px !important;
+   -o-border-radius: 6px !important;
+}
 
   .social {
     display: none;
