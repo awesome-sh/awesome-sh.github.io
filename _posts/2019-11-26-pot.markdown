@@ -1,0 +1,151 @@
+---
+layout: post
+title:  "Ajax 파일업로드(엑셀) 및 Poi 라이브러리 사용하기"
+categories: Java
+tags: Java Ajax POI
+---
+
+<img src="{{ "/assets/191126/1.png" | relative_url }}">   
+
+
+Ajax 비동기통신을 사용해 엑셀파일업로드 후 Controller에서 엑셀데이터를 파싱해보자
+
+업로드가 필요한 페이지 html파일에 아래와 같이 Form과 Input[type=file]을 만들어 줍니다.
+
+```
+<form id="uploadFrm" enctype="multipart/form-data">
+  <p>데이터 업로드<br>엑셀파일만 업로드 가능(xls, xlsx)</p>
+  <input type="file" name="upFile" id="upFile" accept=".xlsx, .xls"/>
+</form>
+```
+
+<hr>
+
+이제 자바스크립트로 Ajax 코드블럭을 아래와 같이 생성해줍니다.
+
+```
+<script>
+let upFile = $('#upFile')[0];
+upFile.addEventListener('change', function() {
+    let form = $('#uploadFrm')[0];
+    let frmData = new FormData(form);
+
+    $.ajax({
+        enctype: 'multipart/form-data',
+        type: 'POST',
+        url: CONTEXTROOT + '컨트롤러 RequestMapping URL',
+        processData: false,   
+        contentType: false,
+        cache: false,
+        data: frmData,
+        success: function(data) {
+            console.log(data);
+        },
+        error: function(e) {
+            console.log(e);
+            alert('파일업로드 실패');
+        }
+    });
+});
+</script>
+```
+
+프로젝트 Maven pom.xml 에 아래와 같이
+
+poi 라이브러리 및 파일 업로드 처리를 위한 라이브러리를 추가해줍니다.
+
+```
+<dependencies>
+  <!-- 엑셀데이터 파싱을 위한 라이브러리 -->
+  <dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>3.17</version>
+  </dependency>
+
+  <!-- 파일업로드 처리를 위한 라이브러리 -->
+  <dependency>
+    <groupId>commons-fileupload</groupId>
+    <artifactId>commons-fileupload</artifactId>
+    <version>1.3.2</version>
+  </dependency>
+</dependencies>
+```
+
+<hr>
+
+이제 컨트롤러로 넘어옵시다.
+
+아래 소스는 파일업로드 처리 -> 업로드 한 파일을 Poi 라이브러리로 파싱합니다.
+
+```
+@SuppressWarnings("resource")
+@RequestMapping(value ="/insertUploadFile.do", method=RequestMethod.POST)
+public String insertUploadFile(MultipartHttpServletRequest request) throws Exception {
+  
+  try {
+    // 파일 읽어들이기
+    MultipartFile file = null;
+    Iterator<String> mIterator = request.getFileNames();
+    if(mIterator.hasNext()) {
+      file = request.getFile(mIterator.next());
+    }
+
+    // 엑셀파일 열기 (엑셀버전 2007 이상일때, 오픈방법)
+    OPCPackage opcPackage = OPCPackage.open(file.getInputStream());
+    XSSFWorkbook wb = new XSSFWorkbook(opcPackage);
+
+    // Sheet 수
+    int sheetNum = wb.getNumberOfSheets();
+
+    // Sheet 수만큼 Loop
+    for(int num = 0; num<sheetNum; num++) {
+
+      XSSFSheet sheet = wb.getSheetAt(num);
+      Iterator<Row> iterator = sheet.iterator();
+
+      // Row
+      while(iterator.hasNext()) {
+        Row currentRow = iterator.next();
+      	Iterator<Cell> cellIterator = currentRow.iterator();
+        
+        // Cell
+        while(cellIterator.hasNext()) {
+      		Cell currentCell = cellIterator.next();
+			
+            /*
+            	poi라이브러리에서 Cell안에 데이터를 꺼내기 위해서
+                셀타입에 따라 접근연산자(.)로 꺼내는 메소드가 달라지기 때문에
+                셀타입을 비교 후 셀데이터를 추출합니다.
+            */
+            if(currentCell.getCellTypeEnum() == CellType.STRING) {
+            	System.out.print(currentCell.getStringCellValue() + "\t");
+            } else if (currentCell.getCellTypeEnum() == CellType.NUMERIC) {
+            	System.out.print((int)currentCell.getNumericCellValue() + "\t");
+            }
+      	}
+      	System.out.println(); // Row를 구분해주기 위한 엔터
+      }
+	}
+  } catch (Exception e) {
+    e.printStackTrace();
+  }
+  return "";
+}
+```
+
+이렇게 작성을 완료 한 뒤,
+
+서버를 실행하시고 input에 파일업로드를 선택하여 엑셀파일을 업로드 하면
+
+셀타입 분기처리 부분에서 찍어두었던 System.out으로 Console에 데이터가 잘 들어오게 됩니다.
+
+데이터 추출이 완료 되었기 때문에
+
+이 데이터를 가공하는것은 시간문제일겁니다.
+
+이렇게 Ajax통신을 이용하여 파일업로드부터 POi라이브러리 사용법까지 진행해보았습니다.
+
+감사합니다.
+
+

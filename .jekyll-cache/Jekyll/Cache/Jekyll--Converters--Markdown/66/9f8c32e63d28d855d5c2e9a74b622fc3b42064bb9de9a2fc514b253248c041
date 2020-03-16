@@ -1,0 +1,15 @@
+I"v<p>이번 포스팅은 첫번째 React 프로젝트, create-react-app으로 시작해보기 입니다.</p>
+
+<p>create-react-app 명령어는 최신 모듈들이 적용되어 생성된다는 사실.</p>
+
+<p>React Project의 Generator 라고 칭해도 될만큼 빠른 속도와 개발환경을 구성해줍니다.</p>
+
+<p>그럼 시작해볼까요.</p>
+
+<p>터미널을 열고, 프로젝트가 생성될 곳으로 이동해준 뒤
+create-react-app 모듈을 Global 로 설치 해줍시다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i -g create-react-app
+</code></pre></div></div>
+
+:ET
