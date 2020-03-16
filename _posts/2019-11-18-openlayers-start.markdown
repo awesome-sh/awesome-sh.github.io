@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "[OpenLayers] 시작하기"
-categories: Javascript OpenLayers Map WebGIS
+categories: WebGIS
+tags: Javascript OpenLayers Map WebGIS
 ---
 
 시작하기 앞서,

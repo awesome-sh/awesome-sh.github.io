@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "[PostgreSQL] 확장프로그램 PostGIS 적용하기"
-categories: PostgreSQL PostGIS Extention WebGIS pgAdmin
+categories: Database
+tags: PostgreSQL PostGIS Extention WebGIS pgAdmin
 ---
 
 이 포스팅은 PostgreSQL과 PostGIS가 설치되어 있다는 가정하에 진행됩니다.

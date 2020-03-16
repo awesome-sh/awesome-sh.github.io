@@ -49,6 +49,9 @@ plainwhite:
 # Build settings
 theme: plainwhite
 
+category_list: [Java, Spring, JavaScript, NodeJS, React, DevOps, Database, WebGIS]
+category_dir: category/
+
 plugins:
   - jekyll-seo-tag
 #  - jekyll-feed
