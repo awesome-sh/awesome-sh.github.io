@@ -7,8 +7,12 @@
 div.highlight {
 	padding: 5px 20px;
 }
-pre.highlight, code {
+
+pre.highlight,
+code {
+	color: #444;
+	text-align: left;
 	font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
-	line-height: 1.4em;
+	line-height: 1.8em;
 	tab-size: 4;
 }

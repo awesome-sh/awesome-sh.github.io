@@ -3,7 +3,7 @@
 @import "syntax";
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 
-$linkColor: #0a59b0;
+$linkColor: #3e7ab9;
 $mobileW: 768px;
 $smallMobileW: 480px;
 $bigScreenW: 1600px;
@@ -17,7 +17,8 @@ $leftWidth: 220px;
 
 body {
   font-family: 'Spoqa Han Sans', 'Sans-serif';
-  font-size: 16px;
+  letter-spacing: -0.3px;
+  font-size: 13px;
   line-height: 1.2em;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -76,6 +77,8 @@ main {
   .about {
     display: flex;
     height: 100vh;
+    border-right: 1px solid #eee;
+    padding-right: 15px;
     padding-bottom: 15vh;
     @media screen and (max-width: $mobileW) {
       height: auto;
@@ -89,14 +92,14 @@ main {
     flex-direction: column;
     align-items: center;
     h2 {
-      font-size: 22px;
+      font-size: 18px;
       margin-top: 25px;
       margin-bottom: 0;
       color: #222222;
       font-weight: normal;
     }
     .tagline {
-      font-size: 22px;
+      font-size: 13px;
       margin-top: 17px;
       color: #aaa;
       white-space: pre-wrap;
@@ -163,10 +166,12 @@ main {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  li {
-    font-size: 14px;
+  
+  li.cate-li {
+    font-size: 12px;
     float: left;
-    background-color: #e3e3e3;
+    border: 1px solid #eee;
+    color: #494949;
     padding: 5px 20px;
     border-radius: 2px;
     @media screen and (max-width: $mobileW) {
@@ -174,6 +179,11 @@ main {
     }
     margin-right: 10px;
     margin-bottom: 10px;
+    transition: all 0.4s ease-out;
+  }
+
+  li.cate-li:hover {
+    border: 1px solid #797979;
   }
 }
 .post-date {
@@ -199,8 +209,10 @@ main {
 
 .post-title {
   line-height: 1.2em;
-  font-size: 28px;
+  font-size: 16px;
+  font-weight: 500;
 }
+
 .posts,
 .post-container {
   list-style-type: none;
@@ -214,14 +226,44 @@ main {
     margin-top: 0;
   }
 }
+
+.posts li.mainPosts {
+  margin: 20px;
+  padding-left: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  background-color: #fff;
+  border: 2px solid #fff;
+}
+
+.posts li:nth-child(1):hover {
+  border: none;
+  background-color: #fff;
+}
+
+.posts li:hover {
+  border: 2px solid #3d4868;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 6px 8px -2px rgb(240, 240, 240);
+  -moz-box-shadow: 2px 6px 8px -2px rgb(240, 240, 240);
+  box-shadow: 2px 6px 8px -2px rgb(240, 240, 240);
+}
+
 .post-container {
   padding-left: 30px;
 }
+
 .post {
   font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
-  font-weight: 300;
+  font-weight: 500;
   color: #222;
-  line-height: 1.9em;
+  text-align: center;
+  line-height: 2.3em;
   a {
     color: $linkColor;
     text-decoration: none;
@@ -234,9 +276,33 @@ main {
   h2,
   h3,
   h4,
-  h5,
-  h6 {
-    font-family: Raleway, sans-serif;
+  h5 {
+    margin: 0;
+    display: inline-block;
+    width: fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #fff;
+    font-size: 14px;
+    background-color: #2e3b58;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+  h6,
+  hr {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    border: 1px solid #f5f5f5;
+  }
+  ul {
+    width: fit-content;
+  }
+  ul li {
+    text-align: left;
+    border-bottom: 1px solid #eee;
   }
 }
 
@@ -248,4 +314,29 @@ main {
   letter-spacing: 0.5px;
   padding-bottom: 10px;
   font-weight: normal;
+}
+
+
+ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+ul.menu li {
+  cursor: pointer;
+  height: 30px;
+  width: 165px;
+  padding-left: 15px;
+  line-height: 30px;
+  transition: all 0.6s ease-out;
+  -webkit-transition: all 0.6s ease-out;
+  -moz-transition: all 0.6s ease-out;
+  -ms-transition: all 0.6s ease-out;
+  -o-transition: all 0.6s ease-out;
+}
+
+ul.menu li:hover {
+  background-color: rgb(243, 243, 243);
 }

@@ -9,7 +9,7 @@ layout: default
   <div class="post-meta">
     <ul class="post-categories">
       {%- for tag in page.categories -%}
-      <li>{{ tag }}</li>
+      <li class="cate-li">#{{ tag }}</li>
       {%- endfor -%}
     </ul>
     <div class="post-date"><i class="icon-calendar"></i>{{ page.date | date: date_format }}</div>

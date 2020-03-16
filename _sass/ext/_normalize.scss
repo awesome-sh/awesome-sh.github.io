@@ -226,7 +226,9 @@ pre {
 // Address odd `em`-unit font size rendering in all browsers.
 //
 
-code,
+code {
+    text-align: left;
+}
 kbd,
 pre,
 samp {

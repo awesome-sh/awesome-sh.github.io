@@ -15,7 +15,7 @@ layout: default
     </li>
 
     {%- for post in site.posts -%}
-      <li>
+      <li class="mainPosts">
         {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
         <a class="post-link" href="{{ post.url | relative_url }}">
           <h2 class="post-title">{{ post.title | escape }}</h2>
@@ -23,18 +23,18 @@ layout: default
         <div class="post-meta">
           <ul class="post-categories">
             {%- for tag in post.categories -%}
-              <li>{{ tag }}</li>
+              <li class="cate-li">#{{ tag }}</li>
             {%- endfor -%}
           </ul>
           <div class="post-date">
             <i class="icon-calendar"></i>
             {{ post.date | date: date_format }}</div>
         </div>
-        <div class="post">
+        <!-- <div class="post">
           {%- if site.show_excerpts -%}
             {{ post.excerpt }}
           {%- endif -%}
-        </div>
+        </div> -->
       </li>
     {%- endfor -%}
   </ul>
