@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "TypeScript 시작해볼까"
+title:  "TypeScript 환경 구성 및 기초 예제"
 categories: Typescript
 tags: Typescript 타입스크립트
 ---
