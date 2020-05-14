@@ -144,3 +144,7 @@ applyMiddleware() 함수에 인자로 Redux-thunk를 넣어 주면 됨
 
     export default store;
 ```
+
+
+
+[참고] 벨로퍼트님 블로그 (http://velopert.com)
