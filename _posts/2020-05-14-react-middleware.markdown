@@ -22,7 +22,7 @@ Reducer가 Action을 처리하기 전, Middleware가 할 수 있는 작업들
 
 <hr />
 
-`
+```
 예) 단순히 전달받은 Action을 Console에 기록할 수 있음
 
 예) 전달받은 Action에 기반하여 Action을 취소하거나,
@@ -30,7 +30,7 @@ Reducer가 Action을 처리하기 전, Middleware가 할 수 있는 작업들
     다른 종류의 Action을 추가적으로 Dispatch 할 수 있음
 
 예) 액션의 정보를 가로채서 가공하여 리듀서로 전달 시켜 줄수도 있음
-`
+```
 
 
 Middleware는 특히 비동기 작업을 할 때 유용함
