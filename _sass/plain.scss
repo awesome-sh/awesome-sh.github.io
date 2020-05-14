@@ -1,7 +1,7 @@
 @import "ext/fonts";
 @import "ext/normalize";
 @import "syntax";
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 $linkColor: #3e7ab9;
 $mobileW: 768px;
@@ -16,9 +16,9 @@ $leftWidth: 220px;
 }
 
 body {
-  font-family: 'Spoqa Han Sans', 'Sans-serif';
+  font-family: 'Nanum Gothic', sans-serif;
   letter-spacing: -0.3px;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.2em;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -144,7 +144,6 @@ main {
 
     a {
       display: block;
-      font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
       text-align: center;
       padding: 1rem 0;
       text-decoration: none;
@@ -261,7 +260,6 @@ main {
 }
 
 .post {
-  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
   font-weight: 500;
   color: #222;
   text-align: center;
@@ -280,24 +278,16 @@ main {
   h4,
   h5 {
     margin: 0;
-    display: inline-block;
     width: fit-content;
-    padding-left: 15px;
-    padding-right: 15px;
-    color: #fff;
-    font-size: 14px;
-    background-color: #2e3b58;
-    border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
+    padding: 10px 0 10px 0;
+    color: #18222b;
+    font-size: 17px;
 }
   h6,
   hr {
     margin-top: 35px;
     margin-bottom: 35px;
-    border: 1px solid #f5f5f5;
+    border: 1px solid #f7f7f7;
   }
   ul {
     width: fit-content;
