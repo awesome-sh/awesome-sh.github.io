@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "[JavaScript] Backbone Framework 이해하기"
+categories: JavaScript
+tags: JavaScript Backbone
+---
+
+<h3>Backbone Framework ?</h3>
+
+- Backbone은 자바스크립트 프레임워크
+
+- MVC패턴을 적용한 프레임워크
+  
+- 뷰(View)와 로직을 분리할 수 있어, 코드 유지보수 시간 감소 및 수정/기능확장이 쉬워짐
+  
+- Underscore 라이브러리를 사용 => 템플레이트 및 뷰의 재사용과 설계 쉽게 할 수 있음
+  
+- RESTful 서버를 이용한다면, 서버와 동기화가 간편해짐 + 뷰의 변화를 쉽게 구현
