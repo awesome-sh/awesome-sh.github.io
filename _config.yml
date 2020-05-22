@@ -14,13 +14,13 @@ css:
   sass_dir: _sass
 plainwhite:
   name: Park Sung Hwa
-  tagline: Web Full Stack Developer
+  tagline: Software Developer
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
 
   # generate social links in footer
   social_links:
-    github:  seong880
+    github:  awesome-sh
     rss: rss
     # dribbble: jekyll
     # facebook: jekyll
