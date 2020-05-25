@@ -1,4 +1,4 @@
-I"�<p>이번 포스팅은 타입스크립트에 대해 알아보고 기초 문법들을 살펴보겠습니다.</p>
+I"J<p>이번 포스팅은 타입스크립트에 대해 알아보고 기초 문법들을 살펴보겠습니다.</p>
 
 <h3>타입스크립트를 왜 쓸까?</h3>
 
@@ -16,20 +16,31 @@
 
 <p>타입스크립트 설치</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ yarn global add typescript 또는
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>  $ yarn global add typescript 또는
   $ npm install -g typescript
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>그 다음, 아래 명령어를 입력하면 <br />
 타입스크립트 설정파일인 (tsconfig.json) 파일이 생성됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ tsc --init
-</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  $ tsc --init
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>그럼 설정파일을 살펴 볼까요? <br />
 /tsconfig.json</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>{
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
@@ -37,7 +48,7 @@
     "esModuleInterop": true
   }
 }
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>target : 컴파일된 코드가 실행될 환경을 설정</li>
@@ -51,7 +62,16 @@
 <p>타입스크립트 설정파일에서 한가지를 추가해 줍니다. <br />
 /tsconfig.json</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>{
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
@@ -60,16 +80,18 @@
     "outDir" : "./dist"
   }
 }
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3>타입스크립트 파일 만들어 보기</h3>
 
 <p>프로젝트 경로에 src 폴더를 만들고, 그 안에 test.ts 파일을 만들어 줍시다.</p>
 
 <p>src/test.ts</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  const hello: string = 'Hello Typescript';
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>  const hello: string = 'Hello Typescript';
   console.log(hello);
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>위 코드에서 변수가 선언된 이후에 (: string) 이것이 바로 <br />
 해당 변수에 타입을 선언(명시)하는 것입니다.</p>
@@ -78,10 +100,13 @@
 
 <hr />
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  let hello: string = 'Hello Typescript';
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>  let hello: string = 'Hello Typescript';
   console.log(hello);
   hello = 1;
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>위와 같이 코드를 변경해보면 에러가 발생하는 것을 확인 하실 수 있습니다.</p>
 
@@ -89,8 +114,9 @@
 
 <p>터미널에 아래 명령어를 입력해 줍니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ tsc
-</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  $ tsc
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>입력하고 나면 아까 설정해두었던 /dist 폴더 안에</p>
 
@@ -104,7 +130,26 @@
 
 <h3>타입스크립트 예시 모음</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  // 내 나이
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre>  // 내 나이
   let age: number = 0;
   console.log(age);
   age = "서른하나";   // 에러
@@ -123,5 +168,5 @@
   let likes: '음악' | '테크' | '전자기기' | '게임';
   likes = '등산'   // 등산 극혐 에러
   // 위에 좋아하는것에 포함되지 않아 에러 발생
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 :ET

@@ -1,106 +1,22 @@
-
 <!DOCTYPE html>
-<html lang="ko">
-  <head>
-    {%- include head.html -%}
-  </head>
-  <body>
-    <main class="container">
-      <section class="about">
-        <a href="/"><img src="{{ "/assets/men.png" | relative_url }}" alt="{{ site.plainwhite.name }}"></a>
-        <h2 id="title">
-          <a href="/">{{ site.plainwhite.name }}</a>
-        </h2>
-        <p class="tagline">{{ site.plainwhite.tagline }}</p>
+<html lang="en">
 
-        <ul class="menu">
-          <li onclick="window.location.href='{{ root_url }}/';">All Posts</li>
-          {% for category in site.categories %}
-                <li onclick="window.location.href='{{ root_url }}/{{ site.category_dir }}{{ category | first }}.html';">
-                  {{ category | first }}<span class="badge">{{ category | last | size }}</span></li>
-          {% endfor %}
-        </ul>
+{% include head.html %}
 
-        <div class="tags-container">
-          <div class="tags">Latest Tags</div>
-          <div class="tags-cloud">
-              {% assign first = site.tags.first %}
-              {% assign max = first[1].size %}
-              {% assign min = max %}
-              {% for tag in site.tags offset:1 %}
-              {% if tag[1].size > max %}
-              {% assign max = tag[1].size %}
-              {% elsif tag[1].size < min %}
-              {% assign min = tag[1].size %}
-              {% endif %}
-              {% endfor %}
-        
-              {% if max == min %}
-              {% assign diff = 1 %}
-              {% else %}
-              {% assign diff = max | minus: min %}
-              {% endif %}
-        
-              {% for tag in site.tags %}
-              {% assign temp = tag[1].size | minus: min | times: 36 | divided_by: diff %}
-              {% assign base = temp | divided_by: 4 %}
-              {% assign remain = temp | modulo: 4 %}
-              {% if remain == 0 %}
-              {% assign size = base | plus: 9 %}
-              {% elsif remain == 1 or remain == 2 %}
-              {% assign size = base | plus: 9 | append: '.5' %}
-              {% else %}
-              {% assign size = base | plus: 10 %}
-              {% endif %}
-              {% if remain == 0 or remain == 1 %}
-              {% assign color = 9 | minus: base %}
-              {% else %}
-              {% assign color = 8 | minus: base %}
-              {% endif %}
-              {{ tag[0] }}
-              {% endfor %}
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
 
-          </div>
-        </div>
-        
-        <ul class="social">
-          {%- if site.plainwhite.social_links.github -%}
-          <a href="https://github.com/{{ site.plainwhite.social_links.github }}">
-            <img src="/assets/github.png" width="100px">
-            </a>
-          {%- endif -%}
-        </ul>
+    {% include nav.html %}
 
-        {%- if site.plainwhite.navigation -%}
-          <nav class="navigation">
-            <ul>
-              {% for link in site.plainwhite.navigation %}
-                <li>
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </nav>
-        {%- endif -%}
+    {{ content }}
 
-        <p>&copy;
-          {{ "now" | date: "%Y" }}</p>
-      </section>
+    {% include footer.html %}
 
-      <section class="content">
-        {{ content }}
-      </section>
-    </main>
-    {%- if site.plainwhite.analytics_id -%}
-      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.plainwhite.analytics_id }}"></script>
-      <script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
 
-		gtag('config', '{{ site.plainwhite.analytics_id }}');
-	</script>
-    {%- endif -%}
-    <script id="dsq-count-scr" src="//sihus.disqus.com/count.js" async></script>
-  </body>
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
 </html>

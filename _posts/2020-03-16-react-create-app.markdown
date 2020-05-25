@@ -5,7 +5,7 @@ categories: React
 tags: React create-react-app
 ---
 
-<img src="{{ "/assets/200316/1.png" | relative_url }}">   
+<img src="{{ "/img/in-post/200316/1.png" | relative_url }}">   
 
 이번 포스팅은 첫번째 React 프로젝트, create-react-app으로 시작해보기 입니다.
 

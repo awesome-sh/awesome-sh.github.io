@@ -124,7 +124,7 @@ css/style.css
 
 모든 파일을 저장하시고 페이지를 새로고침 해봅시다.
 
-<img src="{{ "/assets/191118/1.png" | relative_url }}">   
+<img src="{{ "/img/in-post/191118/1.png" | relative_url }}">   
 
 잘 적용이 되었나요?
 

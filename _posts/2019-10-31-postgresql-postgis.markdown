@@ -20,13 +20,13 @@ pgAdmin은 오라클의 SQL Developer와 같은 PostgreSQL 전용 GUI 툴입니�
     
 PostgreSQL을 선택 -> Object -> Create -> Database 선택
 
-<img src="{{ "/assets/191031/1.png" | relative_url }}">   
+<img src="{{ "/img/in-post/191031/1.png" | relative_url }}">   
 
 <hr/>
 
 Database 이름을 지정해주고 Save 클릭
 
-<img src="{{ "/assets/191031/2.png" | relative_url }}">
+<img src="{{ "/img/in-post/191031/2.png" | relative_url }}">
 
 이렇게 새로운 데이터베이스를 생성해보았습니다.
 
@@ -36,13 +36,13 @@ Database 이름을 지정해주고 Save 클릭
 
 아래 그림처럼 현재 데이터베이스에 Functions 항목에는 아무것도 존재하지 않습니다.
 
-<img src="{{ "/assets/191031/3.png" | relative_url }}">
+<img src="{{ "/img/in-post/191031/3.png" | relative_url }}">
 
 자 그럼, 적용해봅시다
 
 생성된 데이터베이스를 선택한 후 -> 상단에 Tools -> Query Tool 선택해줍니다.
 
-<img src="{{ "/assets/191031/4.png" | relative_url }}">
+<img src="{{ "/img/in-post/191031/4.png" | relative_url }}">
 
 그러면 아래와 같은 Query Editor 창이 열리게 됩니다.
 
@@ -52,11 +52,11 @@ Database 이름을 지정해주고 Save 클릭
 CREATE EXTENSION postgis;
 ```
 
-<img src="{{ "/assets/191031/5.png" | relative_url }}">
+<img src="{{ "/img/in-post/191031/5.png" | relative_url }}">
 
 입력하신 뒤, 에디터 상단에 번개모양 아이콘을 클릭하시거나 [F5]을 누르시면 쿼리가 실행됩니다.
 
-<img src="{{ "/assets/191031/6.png" | relative_url }}">
+<img src="{{ "/img/in-post/191031/6.png" | relative_url }}">
 
 <hr/>
 
@@ -66,7 +66,7 @@ CREATE EXTENSION postgis;
 
 Server -> Databases -> 생성한 데이터베이스 -> Schemas -> Public -> Functions로 가봅시다.
 
-<img src="{{ "/assets/191031/7.png" | relative_url }}">
+<img src="{{ "/img/in-post/191031/7.png" | relative_url }}">
 
 비어있던 Functions에 공간정보를 계산할 수 있는 함수들이 한 바가지 들어가 있는 걸 볼 수 있습니다.
 

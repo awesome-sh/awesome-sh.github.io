@@ -5,7 +5,7 @@ categories: Java
 tags: Java Ajax POI
 ---
 
-<img src="{{ "/assets/191126/1.png" | relative_url }}">   
+<img src="{{ "/img/in-post/191126/1.png" | relative_url }}">   
 
 
 Ajax 비동기통신을 사용해 엑셀파일업로드 후 Controller에서 엑셀데이터를 파싱해보자
